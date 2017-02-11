@@ -22,7 +22,7 @@ var moveFile = function() {
             }
             files.forEach(function (fileName) {
 
-                exec('mv '+ sourceDir + fileName+' '+targetDir, function(err){
+                exec('mv '+ sourceDir + fileName+' '+targetDir+new Date().getTime(), function(err){
                     if(err){
                         console.error('fail to move:'+err);
                     }
