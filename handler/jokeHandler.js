@@ -13,10 +13,10 @@ var getJoke = function (callback) {
             return;
         }
         var count = files.length;
-        if(index<count-1){
-            index+=1;
+        if(index>0){
+            index-=1;
         }else {
-            index=0;
+            index=count-1;
         }
         fs.readFile(config.jokeDir+files[index],'UTF-8' ,function (err, data) {
             if (err) throw err;
