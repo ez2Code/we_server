@@ -19,7 +19,7 @@ var handle = function(res,msgData){
         jokeHandler.handle(handleResult);
 	}
 	else{
-		msgContent = 'hello!you just said:'+content;
+		msgContent = 'sorry!I can\'t understand you.you can input 『天气』 to check the weather or 『笑话』 to get a fun story.'+content;
 		handleResult(msgContent);
 	}
 };
