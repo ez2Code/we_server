@@ -2,6 +2,7 @@ var msgGenerater = require('./msgGenerater');
 var jokeHandler = require('./jokeHandler');
 var weatherHandler = require('./weatherHandler');
 var replyer = require('./replyer');
+var config = require('../config/config');
 
 var handle = function(res,msgData){
 	var content = msgData.Content[0];
@@ -13,7 +14,9 @@ var handle = function(res,msgData){
 		var resultJson = msgGenerater.generateTextMsg(fromUser,me,data);
 		replyer.reply(res,resultJson);
 	}
-	if(content.indexOf('天气')>-1){
+	if(content=='网盘'){
+        handleResult(config.diskPath);
+    }else if(content.indexOf('天气')>-1){
 		weatherHandler.handle('chengdu',handleResult);
 	}else if(content.indexOf('笑话')>-1||content.indexOf('段子')>-1){
         jokeHandler.handle(handleResult);
