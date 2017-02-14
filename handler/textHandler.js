@@ -15,7 +15,8 @@ var handle = function(res,msgData){
 		replyer.reply(res,resultJson);
 	}
 	if(content=='网盘'){
-        handleResult(config.diskPath);
+        msgContent = '<a href="'+config.diskPath+'">Levy\'s disk</a>';
+        handleResult(msgContent);
     }else if(content.indexOf('天气')>-1){
 		weatherHandler.handle('chengdu',handleResult);
 	}else if(content.indexOf('笑话')>-1||content.indexOf('段子')>-1){
